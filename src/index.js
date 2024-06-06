@@ -1,4 +1,4 @@
-function ToDo(title, description, dueDate, priority) {
+function createToDo(title, description, dueDate, priority) {
   this.title = title;
   this.description = description;
   this.dueDate = dueDate;
