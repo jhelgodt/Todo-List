@@ -19,9 +19,21 @@ document.getElementById("newTodoButton").addEventListener("click", function () {
   // Create a new row
   var newRow = tbody.insertRow();
 
-  // Insert cells and set their text content
-  newRow.insertCell(0).textContent = newTodo.title;
-  newRow.insertCell(1).textContent = newTodo.description;
-  newRow.insertCell(2).textContent = newTodo.dueDate;
-  newRow.insertCell(3).textContent = newTodo.priority;
+  // Insert cells, set their text content, and make them editable
+
+  var titleCell = newRow.insertCell(0);
+  titleCell.textContent = newTodo.title;
+  titleCell.contentEditable = "true";
+
+  var descriptionCell = newRow.insertCell(1);
+  descriptionCell.textContent = newTodo.description;
+  descriptionCell.contentEditable = "true";
+
+  var dueDateCell = newRow.insertCell(2);
+  dueDateCell.textContent = newTodo.dueDate;
+  dueDateCell.contentEditable = "true";
+
+  var priorityCell = newRow.insertCell(3);
+  priorityCell.textContent = newTodo.priority;
+  priorityCell.contentEditable = "true";
 });
