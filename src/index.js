@@ -8,8 +8,11 @@ function createToDo(title, description, dueDate, priority) {
 document.getElementById("newTodoButton").addEventListener("click", function () {
   var title = "Sample Title";
   var description = "Sample Description";
-  var dueDate = "2022-12-31";
-  var priority = "High";
+  var dueDate = new Date();
+  dueDate.setDate(dueDate.getDate() + 1);
+  dueDate = dueDate.toISOString().split("T")[0];
+
+  var priority = "Medium";
   console.log(title);
   var newTodo = new createToDo(title, description, dueDate, priority);
 
