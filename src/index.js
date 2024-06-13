@@ -20,6 +20,25 @@ function CreateToDo(project, title, description, dueDate, priority) {
   project.todos.push(this); // Add the new ToDo to the specified project
 }
 
+// Event listener for the "New Project" button
+document
+  .getElementById("newProjectButton")
+  .addEventListener("click", function () {
+    // Create a new project
+    var newProject = new Project("Sample");
+
+    // Get the project dropdown
+    var projectDropdown = document.getElementById("projectDropdown");
+
+    // Create a new option for the new project
+    var option = document.createElement("option");
+    option.value = newProject.name;
+    option.textContent = newProject.name;
+
+    // Add the new option to the project dropdown
+    projectDropdown.appendChild(option);
+  });
+
 // Modify the event listener for the "New ToDo" button
 document.getElementById("newTodoButton").addEventListener("click", function () {
   var title = "Sample Title";
